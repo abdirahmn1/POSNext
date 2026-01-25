@@ -43,23 +43,23 @@ export const sectionThemes = {
 export const subsectionThemes = {
 	gray: {
 		gradient: "from-gray-50 to-gray-100",
-		border: "border-gray-200",
-		iconColor: "text-indigo-600",
+		border: "border-2 border-gray-200",
+		iconColor: "text-black-600",
 	},
 	blue: {
-		gradient: "from-blue-50 to-indigo-50",
-		border: "border-blue-200",
-		iconColor: "text-blue-600",
+		gradient: "bg-gray-100",
+		border: "border-2 border-gray-200",
+		iconColor: "text-black-600",
 	},
 	emerald: {
-		gradient: "from-emerald-50 to-green-50",
-		border: "border-green-200",
-		iconColor: "text-green-600",
+		gradient: "bg-gray-100",
+		border: "border-2 border-gray-200",
+		iconColor: "text-black-600",
 	},
 	teal: {
-		gradient: "from-teal-50 to-cyan-50",
-		border: "border-teal-200",
-		iconColor: "text-teal-600",
+		gradient: "bg-gray-100",
+		border: "border-2 border-gray-200",
+		iconColor: "text-black-600",
 	},
 }
 

@@ -1,17 +1,19 @@
 <template>
 	<div
-		class="bg-white shadow-sm sticky top-0 z-[200]"
+		class="bg-white border border-bottom-1 sticky top-0 z-[200]"
 	>
 		<div class="flex py-2 sm:py-3">
 			<!-- POS Icon - Aligned with Management Sidebar (64px) -->
 			<div class="w-16 flex-shrink-0 flex items-center justify-center">
 				<button
-					class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-md flex-shrink-0 hover:from-blue-600 hover:to-blue-700 active:scale-95 transition-all"
-					:aria-label="'POS Next'"
-					:title="__('POS Next')"
+					class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0 hover:from-blue-600 hover:to-blue-700 active:scale-95 transition-all"
+					:aria-label="'ERPNext POS'"
+					:title="__('ERPNext POS')"
 				>
-					<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-						<path d="M20 7h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 4h4v3h-4V4zm10 16H4V9h16v11z"/>
+					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+						<path d="M0 12C0 5.37258 5.37258 0 12 0H88C94.6274 0 100 5.37258 100 12V88C100 94.6274 94.6274 100 88 100H12C5.37258 100 0 94.6274 0 88V12Z" fill="#171717"/>
+						<path d="M65.7097 32.9462H67.3871V24H33V32.9462H43.9032H65.7097Z" fill="white"/>
+						<path d="M43.9032 66.2151V53.914H65.7097V44.9677H43.9032H33V75.1613H67.6667V66.2151H43.9032Z" fill="white"/>
 					</svg>
 				</button>
 			</div>
@@ -22,8 +24,8 @@
 				<div class="flex items-center gap-1 sm:gap-4 min-w-0 flex-1 overflow-hidden">
 					<div class="min-w-0 flex-shrink overflow-hidden">
 						<div class="flex items-center gap-1 sm:gap-2">
-							<h1 class="text-xs sm:text-base font-bold text-gray-900 truncate flex-shrink">{{ 'POS Next' }}</h1>
-							<span class="hidden sm:inline-flex relative items-center px-1 sm:px-2 py-0.5 text-[8px] sm:text-[10px] font-bold bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md shadow-sm hover:shadow-md transition-shadow flex-shrink-0">
+							<h1 class="text-xs sm:text-base font-bold text-gray-900 truncate flex-shrink">{{ 'ERPNext POS' }}</h1>
+							<span class="hidden sm:inline-flex relative items-center px-1 sm:px-2 py-0.5 text-[8px] sm:text-[10px] font-bold bg-blue-500 text-white rounded-[8px] flex-shrink-0">
 								<span class="absolute inset-0 bg-white/20 rounded-md animate-pulse"></span>
 								<span class="relative">v{{ appVersion }}</span>
 							</span>
@@ -35,7 +37,7 @@
 					<div class="hidden lg:flex items-center gap-4 ms-6 flex-shrink-0">
 						<!-- Current Time -->
 						<StatusBadge
-							variant="blue"
+							variant="gray"
 							size="sm"
 							:icon="timeIcon"
 							:text="currentTime"
@@ -44,7 +46,7 @@
 						<!-- Shift Duration -->
 						<StatusBadge
 							v-if="hasOpenShift && shiftDuration"
-							variant="green"
+							variant="gray"
 							size="xs"
 							:icon="shiftIcon"
 							:label="__('Shift Open:')"
@@ -240,12 +242,12 @@
 						:aria-label="isRefreshing ? __('Refreshing...') : __('Refresh items and customers')"
 					/>
 
-					<div class="w-px h-4 sm:h-6 bg-gray-200 hidden md:block"></div>
+					<!-- <div class="w-px h-4 sm:h-6 bg-gray-200 hidden md:block"></div> -->
 
 					<!-- Language Switcher - Hidden on mobile, shown in UserMenu instead -->
-					<div class="hidden md:block">
+					<!-- <div class="hidden md:block">
 						<LanguageSwitcher />
-					</div>
+					</div> -->
 
 					<div class="w-px h-4 sm:h-6 bg-gray-200"></div>
 

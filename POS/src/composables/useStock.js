@@ -24,8 +24,8 @@ export function useStock() {
 		if (quantity < 0) {
 			return {
 				level: "negative",
-				color: "bg-red-500",
-				textColor: "text-white",
+				color: "bg-red-100",
+				textColor: "text-black",
 				label: __("Negative Stock"),
 			}
 		}
@@ -33,8 +33,8 @@ export function useStock() {
 		if (quantity === 0) {
 			return {
 				level: "out",
-				color: "bg-red-500",
-				textColor: "text-white",
+				color: "bg-red-100",
+				textColor: "text-black",
 				label: __("Out of Stock"),
 			}
 		}
@@ -42,16 +42,16 @@ export function useStock() {
 		if (quantity <= lowStockThreshold) {
 			return {
 				level: "low",
-				color: "bg-amber-500",
-				textColor: "text-white",
+				color: "bg-amber-100",
+				textColor: "text-black",
 				label: __("Low Stock"),
 			}
 		}
 
 		return {
 			level: "safe",
-			color: "bg-green-500",
-			textColor: "text-white",
+			color: "bg-green-100",
+			textColor: "text-black",
 			label: __("In Stock"),
 		}
 	}

@@ -16,7 +16,7 @@
           </div>
 
           <!-- Shift Summary Header (hidden in entry mode when hideExpectedAmount is enabled) -->
-          <div v-if="shouldShowSummary" class="bg-white border border-gray-200 rounded-lg p-3 md:p-6 shadow-sm">
+          <div v-if="shouldShowSummary" class="bg-white border border-gray-200 rounded-lg p-3 md:p-6">
             <div class="flex flex-col sm:flex-row justify-start items-start gap-3 mb-3 md:mb-6">
               <div class="flex-1">
                 <h3 class="text-start text-sm md:text-base font-medium text-gray-900">{{ closingData.pos_profile }}</h3>
@@ -78,7 +78,7 @@
           </div>
 
           <!-- Invoice Details (Collapsible) (hidden in entry mode when hideExpectedAmount is enabled) -->
-          <div v-if="shouldShowSummary && invoiceCount > 0" class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          <div v-if="shouldShowSummary && invoiceCount > 0" class="bg-white border border-gray-200 rounded-lg overflow-hidden">
             <button
               @click="showInvoiceDetails = !showInvoiceDetails"
               :aria-label="`${showInvoiceDetails ? 'Hide' : 'Show'} invoice details for ${invoiceCount} transactions`"
@@ -194,7 +194,7 @@
           </div>
 
           <!-- Payment Reconciliation -->
-          <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
             <div :class="[
               'px-3 py-3 md:px-6 md:py-4 border-b border-gray-200',
               hideExpectedAmount && showSuccessReport ? 'bg-green-50 border-green-200' : 'bg-gray-50'
@@ -402,7 +402,7 @@
           </div>
 
           <!-- Tax Summary (hidden in entry mode when hideExpectedAmount is enabled) -->
-          <div v-if="shouldShowSummary && closingData.taxes && closingData.taxes.length > 0" class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          <div v-if="shouldShowSummary && closingData.taxes && closingData.taxes.length > 0" class="bg-white border border-gray-200 rounded-lg overflow-hidden">
             <div class="px-3 py-3 md:px-6 md:py-4 bg-gray-50 border-b border-gray-200">
               <h3 class="text-sm md:text-lg font-medium text-gray-900">{{ __('Tax Summary') }}</h3>
             </div>

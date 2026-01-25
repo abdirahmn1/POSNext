@@ -9,6 +9,7 @@
 				<div class="flex items-center gap-2">
 					<div class="flex-1">
 						<Input
+							class="!bg-gray-100 rounded-lg border-none hover:bg-gray-100 focus:ring-2 focus:ring-gray-200"
 							v-model="searchTerm"
 							type="text"
 							:placeholder="__('Search by invoice number or customer...')"
@@ -50,7 +51,7 @@
 					<div
 						v-for="invoice in filteredInvoices"
 						:key="invoice.name"
-						class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md transition-all"
+						class="bg-white border border-gray-200 rounded-lg p-3 transition-all"
 					>
 						<div class="flex items-start justify-between gap-3">
 							<!-- Invoice Info (Start Side) -->

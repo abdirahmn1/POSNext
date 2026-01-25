@@ -2,12 +2,12 @@
 	<!-- Icon-Only Sidebar - Hidden on Mobile, Visible on Desktop -->
 	<div class="hidden lg:flex w-16 flex-shrink-0 bg-white border-e border-gray-200 flex-col items-center py-4 flex flex-col gap-2">
 		<!-- Promotions -->
-		<button
+		<!-- <button
 			@click="handleMenuClick('promotions')"
 			:class="[
 				'w-12 h-12 rounded-lg flex items-center justify-center transition-all relative group',
 				activeMenu === 'promotions'
-					? 'bg-green-100 text-green-600'
+					? 'bg-gray-100 text-black-600'
 					: 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
 			]"
 			:title="__('Promotions')"
@@ -16,7 +16,7 @@
 			<div class="absolute start-full ms-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">
 				{{ __('Promotions') }}
 			</div>
-		</button>
+		</button> -->
 
 		<!-- Products -->
 		<button
@@ -24,7 +24,7 @@
 			:class="[
 				'w-12 h-12 rounded-lg flex items-center justify-center transition-all relative group',
 				activeMenu === 'products'
-					? 'bg-purple-100 text-purple-600'
+					? 'bg-gray-100 text-black-600'
 					: 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
 			]"
 			:title="__('Products')"
@@ -41,7 +41,7 @@
 			:class="[
 				'w-12 h-12 rounded-lg flex items-center justify-center transition-all relative group',
 				activeMenu === 'invoices'
-					? 'bg-indigo-100 text-indigo-600'
+					? 'bg-gray-100 text-black-600'
 					: 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
 			]"
 			:title="__('Invoice Management')"
@@ -64,7 +64,7 @@
 			:class="[
 				'w-12 h-12 rounded-lg flex items-center justify-center transition-all relative group',
 				activeMenu === 'settings'
-					? 'bg-gray-100 text-gray-900'
+					? 'bg-gray-100 text-black-600'
 					: 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
 			]"
 			:title="__('Settings')"

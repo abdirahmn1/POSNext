@@ -36,8 +36,7 @@
 									:placeholder="isOffline ? __('Search unavailable offline') : __('Search by invoice, customer, or mobile...')"
 									:disabled="isOffline"
 									:class="[
-										'w-full ps-10 pe-10 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500',
-										isOffline ? 'bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed' : 'border-gray-300'
+										'!bg-gray-100 w-full ps-10 pe-10 py-2 border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-200',
 									]"
 									@input="onSearchInput"
 									@keydown.down.prevent="navigateSuggestion(1)"
@@ -136,7 +135,7 @@
 							v-for="invoice in filteredInvoiceList"
 							:key="invoice.name"
 							@click="openReturnModal(invoice)"
-							class="bg-white border border-gray-200 rounded-lg p-3 hover:border-blue-400 hover:bg-blue-50/30 cursor-pointer transition-all"
+							class="bg-white border border-gray-200 rounded-lg p-3 cursor-pointer transition-all"
 						>
 							<div class="flex items-start justify-between gap-3">
 								<!-- Invoice Info (Start Side) -->
@@ -205,7 +204,7 @@
 		<template #body-content>
 			<div class="flex flex-col gap-4">
 				<!-- Invoice Details -->
-				<div v-if="originalInvoice" class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 sm:p-5 border border-blue-100 shadow-sm">
+				<div v-if="originalInvoice" class="bg-gray-50 rounded-lg p-4 sm:p-5">
 					<!-- Mobile Layout -->
 					<div class="sm:hidden flex flex-col gap-3">
 						<div class="flex items-start gap-2">

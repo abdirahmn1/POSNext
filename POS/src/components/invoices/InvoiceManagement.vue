@@ -99,9 +99,9 @@
 									<button
 										@click="unpaidFilter = 'all'"
 										:class="[
-											'px-4 py-2 rounded-lg font-medium text-sm transition-all',
+											'px-4 py-2 rounded-lg font-medium text-sm',
 											unpaidFilter === 'all'
-												? 'bg-orange-500 text-white shadow-md'
+												? 'bg-orange-500 text-white'
 												: 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
 										]"
 									>
@@ -110,9 +110,9 @@
 									<button
 										@click="unpaidFilter = 'partial'"
 										:class="[
-											'px-4 py-2 rounded-lg font-medium text-sm transition-all',
+											'px-4 py-2 rounded-lg font-medium text-sm',
 											unpaidFilter === 'partial'
-												? 'bg-orange-500 text-white shadow-md'
+												? 'bg-orange-500 text-white'
 												: 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
 										]"
 									>
@@ -121,9 +121,9 @@
 									<button
 										@click="unpaidFilter = 'unpaid'"
 										:class="[
-											'px-4 py-2 rounded-lg font-medium text-sm transition-all',
+											'px-4 py-2 rounded-lg font-medium text-sm',
 											unpaidFilter === 'unpaid'
-												? 'bg-orange-500 text-white shadow-md'
+												? 'bg-orange-500 text-white'
 												: 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
 										]"
 									>
@@ -132,9 +132,9 @@
 									<button
 										@click="unpaidFilter = 'overdue'"
 										:class="[
-											'px-4 py-2 rounded-lg font-medium text-sm transition-all',
+											'px-4 py-2 rounded-lg font-medium text-sm',
 											unpaidFilter === 'overdue'
-												? 'bg-red-500 text-white shadow-md'
+												? 'bg-red-500 text-white'
 												: 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
 										]"
 									>
@@ -181,7 +181,7 @@
 									<div
 										v-for="invoice in filteredUnpaidInvoices"
 										:key="invoice.name"
-										class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
+										class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover transition-shadow"
 									>
 										<!-- Invoice Header -->
 										<div class="p-4 border-b bg-gray-50">
@@ -486,7 +486,7 @@
 									<div
 										v-for="invoice in returnInvoices"
 										:key="invoice.name"
-										class="bg-white border border-red-200 rounded-lg p-4 hover:shadow-md transition-all"
+										class="bg-white border border-red-200 rounded-lg p-4 hover transition-all"
 									>
 										<div class="flex items-start justify-between">
 											<div class="flex-1">

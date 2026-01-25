@@ -8,13 +8,13 @@
 					:class="[
 						'flex items-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs font-medium whitespace-nowrap transition-[background-color,border-color] duration-75 touch-manipulation snap-start flex-shrink-0',
 						!selectedItemGroup
-							? 'bg-blue-50 text-blue-600 border-2 border-blue-500 shadow-sm'
-							: 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 active:bg-gray-100',
+							? 'bg-gray-100 text-black-600 border-2 border-gray-200'
+							: 'bg-white text-gray-700 border-2 border-gray-200 hover:bg-gray-50 active:bg-gray-100',
 					]"
 				>
-					<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<!-- <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-					</svg>
+					</svg> -->
 					<span>{{ __('All Items') }}</span>
 				</button>
 				<button
@@ -24,8 +24,8 @@
 					:class="[
 						'flex items-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs font-medium whitespace-nowrap transition-[background-color,border-color] duration-75 touch-manipulation snap-start flex-shrink-0',
 						selectedItemGroup === group.item_group
-							? 'bg-blue-50 text-blue-600 border-2 border-blue-500 shadow-sm'
-							: 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 active:bg-gray-100',
+							? 'bg-gray-100 text-black-600 border-2 border-gray-200'
+							: 'bg-white text-gray-700 border-2 border-gray-200 hover:bg-gray-50 active:bg-gray-100',
 					]"
 				>
 					<span>{{ __(group.item_group) }}</span>
@@ -73,12 +73,12 @@
 						type="text"
 						:placeholder="searchPlaceholder"
 						:class="[
-							'w-full text-[11px] sm:text-sm border rounded-lg px-2 sm:px-3 py-2 ps-7 sm:ps-10 pe-16 sm:pe-24 focus:outline-none transition-all',
-							autoAddEnabled
-								? 'border-blue-400 bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
-								: scannerEnabled
-								? 'border-green-400 bg-green-50 focus:ring-2 focus:ring-green-500 focus:border-transparent'
-								: 'border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+							'w-full text-[11px] sm:text-sm border-none bg-gray-50 focus:ring-2 focus:ring-gray-200 rounded-lg px-2 sm:px-3 py-2 ps-7 sm:ps-10 pe-16 sm:pe-24 ',
+							// autoAddEnabled
+							// 	? 'border-blue-400 bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+							// 	: scannerEnabled
+							// 	? 'border-green-400 bg-green-50 focus:ring-2 focus:ring-green-500 focus:border-transparent'
+							// 	: 'border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
 						]"
 						:aria-label="__('Search items')"
 					/>
@@ -152,9 +152,9 @@
 						@click="toggleSortDropdown"
 						data-sort-button
 						:class="[
-							'p-1.5 sm:p-2 rounded-lg transition-[background-color,box-shadow] duration-75 touch-manipulation border',
+							'p-1.5 sm:p-2 rounded-lg transition-[background-color,box-shadow] duration-75 touch-manipulation border hover:bg-gray-200',
 							sortBy
-								? 'bg-blue-50 border-blue-400 text-blue-700 shadow-sm'
+								? 'bg-gray-50 border-gray-200 text-black-700'
 								: 'bg-white border-gray-300 text-gray-600 hover:bg-gray-50 active:bg-gray-100'
 						]"
 						:title="sortBy
@@ -186,7 +186,7 @@
 									@click="handleSortToggle(null)"
 									:class="[
 										'w-full px-3 py-2 text-sm transition-colors flex items-center justify-between group',
-										!sortBy ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-50'
+										!sortBy ? 'bg-gray-200 text-black-700' : 'text-gray-500 hover:bg-gray-50'
 									]"
 								>
 									<span class="flex items-center gap-2.5">
@@ -206,11 +206,14 @@
 									@click="handleSortToggle(option.field)"
 									:class="[
 										'w-full px-3 py-2 text-sm transition-colors flex items-center justify-between group',
-										sortBy === option.field ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-50'
+										sortBy === option.field ? 'bg-gray-200 text-black-700' : 'text-gray-600 hover:bg-gray-50'
 									]"
 								>
 									<span class="flex items-center gap-2.5">
-										<svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<svg
+										 class= "w-4 h-4"
+										 :class="sortBy === option.field ? 'text-black-600 group-hover:text-black-600' : 'text-gray-400 group-hover:text-gray-600'" 
+										 fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="option.icon"/>
 										</svg>
 										<span>{{ option.label }}</span>
@@ -218,7 +221,7 @@
 									<!-- Sort direction icon -->
 									<svg
 										class="w-5 h-5"
-										:class="sortBy === option.field ? 'text-blue-600' : 'text-gray-300'"
+										:class="sortBy === option.field ? 'text-black-600' : 'text-gray-300'"
 										fill="none"
 										stroke="currentColor"
 										viewBox="0 0 24 24"
@@ -285,7 +288,7 @@
 						@touchend.passive="getOptimizedClickHandler(item).touchend"
 						@click="getOptimizedClickHandler(item).click"
 						:class="[
-							'group relative bg-white border border-gray-200 rounded-lg p-1.5 sm:p-2.5 touch-manipulation transition-[border-color,box-shadow] duration-100 cursor-pointer hover:border-blue-400 hover:shadow-md',
+							'group relative bg-white border-2 border-gray-200 rounded-lg p-1.5 sm:p-2.5 touch-manipulation transition-[border-color,box-shadow] duration-100 cursor-pointer overflow-clip',
 						]"
 					>
 						<!-- Stock Badge - Tap to select, long press to view warehouse availability -->
@@ -296,10 +299,9 @@
 							@pointercancel="clearLongPress"
 							@pointerleave="clearLongPress"
 							:class="[
-								'absolute -top-1.5 -end-1.5 sm:-top-2 sm:-end-2 rounded-md shadow-lg z-10',
+								'absolute -top-[1px] -end-[1px] sm:-top-[2px] sm:-end-[2px] rounded-bl-lg z-10',
 								'px-2 sm:px-2.5 py-1 sm:py-1 text-[10px] sm:text-xs font-bold',
 								'border-2 border-white cursor-pointer select-none',
-								'hover:scale-110 hover:shadow-xl transition-all duration-200',
 								getStockStatus((item.actual_qty ?? item.stock_qty ?? 0)).color,
 								getStockStatus((item.actual_qty ?? item.stock_qty ?? 0)).textColor
 							]"
@@ -521,7 +523,7 @@
 							@touchmove.passive="getOptimizedClickHandler(item).touchmove"
 							@touchend.passive="getOptimizedClickHandler(item).touchend"
 							@click="getOptimizedClickHandler(item).click"
-							class="group cursor-pointer hover:bg-blue-50 hover:shadow-md transition-[background-color,box-shadow] duration-100 touch-manipulation active:bg-blue-100"
+							class="group cursor-pointer touch-manipulation active:bg-gray-100"
 						>
 							<td class="px-2 sm:px-3 py-2 whitespace-nowrap w-[50px] sm:w-[60px]">
 								<div class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded flex items-center justify-center overflow-hidden">
@@ -567,9 +569,8 @@
 									@pointercancel="clearLongPress"
 									@pointerleave="clearLongPress"
 									:class="[
-										'inline-block px-1.5 sm:px-3 py-0.5 sm:py-1.5 rounded-md shadow-sm',
+										'inline-block px-1.5 sm:px-3 py-0.5 sm:py-1.5 rounded-lg',
 										'text-[10px] sm:text-sm font-bold cursor-pointer select-none',
-										'hover:scale-105 hover:shadow-md transition-all duration-200',
 										getStockStatus((item.actual_qty ?? item.stock_qty ?? 0)).color,
 										getStockStatus((item.actual_qty ?? item.stock_qty ?? 0)).textColor
 									]"

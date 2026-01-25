@@ -2,7 +2,7 @@
 	<div ref="menuRef" class="relative">
 		<button
 			@click="isOpen = !isOpen"
-			class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg transition-colors"
+			class="flex items-center gap-1 px-3 py-2 hover:bg-gray-50 rounded-lg transition-colors"
 		>
 			<div class="text-end mx-1 hidden sm:block">
 				<p class="text-sm font-semibold text-gray-900">{{ userName }}</p>
@@ -129,14 +129,14 @@ import { useLocale } from "@/composables/useLocale"
 // Avatar Sub-component
 const Avatar = (props) => {
 	const sizeClass = props.size === 'sm' ? 'w-9 h-9' : 'w-10 h-10'
-	const bgClass = props.image ? 'bg-gray-200' : 'bg-gradient-to-br from-blue-500 to-blue-600'
+	const bgClass = props.image ? 'bg-gray-200' : 'bg-gray-100'
 
 	return h('div', {
-		class: `${sizeClass} rounded-full flex items-center justify-center shadow-md overflow-hidden flex-shrink-0 ${bgClass}`
+		class: `${sizeClass} rounded-full flex items-center justify-center overflow-hidden flex-shrink-0 ${bgClass}`
 	}, [
 		props.image
 			? h('img', { src: props.image, alt: props.name, class: 'w-full h-full object-cover' })
-			: h('span', { class: 'text-sm font-bold text-white' }, props.initials)
+			: h('span', { class: 'text-sm font-bold text-black' }, props.initials)
 	])
 }
 
