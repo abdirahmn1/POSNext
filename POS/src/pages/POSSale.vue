@@ -169,10 +169,10 @@
 			</POSHeader>
 
 			<!-- Main Content: Responsive Layout -->
+			<!-- style="max-height: calc(100vh - 60px - var(--header-height, 60px))" -->
 			<div
 				v-if="shiftStore.hasOpenShift"
 				class="flex-1 flex overflow-hidden relative"
-				style="max-height: calc(100vh - 60px - var(--header-height, 60px))"
 			>
 				<!-- Icon-Only Management Slider - Always Visible -->
 				<ManagementSlider @menu-clicked="handleManagementMenuClick" />
@@ -929,7 +929,7 @@
 			/>
 
 			<!-- Footer -->
-			<POSFooter />
+			<!-- <POSFooter /> -->
 		</template>
 	</div>
 </template>
@@ -947,7 +947,7 @@ import ShiftClosingDialog from "@/components/ShiftClosingDialog.vue";
 import ShiftOpeningDialog from "@/components/ShiftOpeningDialog.vue";
 import ClearCacheOverlay from "@/components/common/ClearCacheOverlay.vue";
 import LoadingSpinner from "@/components/common/LoadingSpinner.vue";
-import POSFooter from "@/components/common/POSFooter.vue";
+// import POSFooter from "@/components/common/POSFooter.vue";
 import ManagementSlider from "@/components/pos/ManagementSlider.vue";
 import POSHeader from "@/components/pos/POSHeader.vue";
 import BatchSerialDialog from "@/components/sale/BatchSerialDialog.vue";
