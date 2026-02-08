@@ -1108,23 +1108,10 @@
 				<!-- Discount Display - Highlighted -->
 				<div
 					v-if="discountAmount > 0"
-					class="flex items-center justify-between mb-0.5 bg-red-50 rounded px-1.5 py-1 -mx-0.5"
+					class="flex items-center justify-between text-base mb-1.5"
 				>
-					<div class="flex items-center gap-1">
-						<svg
-							class="w-3.5 h-3.5 text-red-600"
-							fill="currentColor"
-							viewBox="0 0 20 20"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-						<span class="text-xs font-bold text-red-700">{{ __("Discount") }}</span>
-					</div>
-					<span class="text-sm text-red-600 min-w-[60px]">{{
+					<span class="text-gray-600">{{ __("Discount") }}</span>
+					<span class="text-red-600">{{
 						formatCurrency(discountAmount)
 					}}</span>
 				</div>
