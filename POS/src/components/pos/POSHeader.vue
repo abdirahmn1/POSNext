@@ -5,7 +5,8 @@
 		<div class="flex py-2 sm:py-3">
 			<!-- POS Icon - Aligned with Management Sidebar (64px) -->
 			<div class="w-16 flex-shrink-0 flex items-center justify-center">
-				<button
+				<a href="/app">
+					<button
 					class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0 hover:from-blue-600 hover:to-blue-700 active:scale-95 transition-all"
 					:aria-label="'ERPNext POS'"
 					:title="__('ERPNext POS')"
@@ -16,6 +17,7 @@
 						<path d="M43.9032 66.2151V53.914H65.7097V44.9677H43.9032H33V75.1613H67.6667V66.2151H43.9032Z" fill="white"/>
 					</svg>
 				</button>
+			</a>
 			</div>
 
 			<!-- Main Header Content -->
